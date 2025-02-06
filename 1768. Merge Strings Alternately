@@ -1,0 +1,31 @@
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: str
+        """
+        idx = min(len(word1), len(word2))
+        str = ""
+        
+        for i in range(0,idx):
+            letter1 = word1[i]
+            letter2 = word2[i]
+
+            str = str + letter1 + letter2
+        
+        # need to identify the longer word
+        try:
+            remainder = word1[idx+1]
+            str = str + word1[idx+1:]
+
+        try:
+            remainder = word2[idx+1]
+            str = str + word2[idx+1:]
+        
+        except:
+            str = str
+        
+        return str
+
+# url: https://leetcode.com/problems/merge-strings-alternately/?envType=study-plan-v2&envId=leetcode-75
